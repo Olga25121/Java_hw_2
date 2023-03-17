@@ -20,17 +20,20 @@ public class Task_2 {
         String[] infoBase;
         StringBuilder sb = new StringBuilder();
 
-		try (BufferedReader br = new BufferedReader(new FileReader(dataFile))) {
-			String line;
-            while ((line = br.readLine()) != null) {
-                infoBase = line.replace("\"", "").split(":|,");
-				sb.append("Студент ").append(infoBase[1]).append(" получил ").append(infoBase[3])
-                .append(" по предмету ").append(infoBase[5]).append(".\n");
-			}
-            System.out.println(sb);
-		}
-                catch (Exception e) {
-			e.printStackTrace();
-		}
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(dataFile));
+            String line; {
+                while ((line = br.readLine()) != null) {
+                    infoBase = line.replace("\"", "").split(":|,");
+                    sb.append("Студент ").append(infoBase[1]).append(" получил ").append(infoBase[3])
+                            .append(" по предмету ").append(infoBase[5]).append(".\n");
+                }
+                System.out.println(sb);
+            }
+            br.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
