@@ -19,7 +19,7 @@ public class Task_1 {
                 }
                 sb.append(Arrays.toString(arr)).append("\n");
                 try {
-                    FileWriter fw = new FileWriter("log.txt", false);
+                    FileWriter fw = new FileWriter("log_task1.txt", false);
                     fw.write(sb.toString());
                     fw.close();
                 } catch (Exception e) {
